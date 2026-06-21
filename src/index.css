@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* 
+ * PREMIUM LIGHT THEME ENGINE OVERRIDES
+ * Converts all nested dark surfaces, high-contrast black backdrops, 
+ * glass-cards, and text configurations into clean, highly readable, 
+ * elegant daylight interfaces.
+ */
+
+/* 1. Global Reset & Body Background Override */
+body, html {
+  background-color: #f8fafc !important; /* Cool off-white */
+  color: #0f172a !important; /* slate-900 */
+}
+
+/* Ensure our main container overrides the hardcoded dark colors */
+div.min-h-screen {
+  background-color: #f8fafc !important; /* Soft cool slate base */
+  color: #0f172a !important; /* Slate-900 list/text */
+}
+
+/* Style alternative mode (warm cozy light theme) */
+div.min-h-screen.bg-\[\#040407\],
+div.min-h-screen.bg-amber-50\/45,
+body.warm-light {
+  background-color: #fdfbf7 !important; /* Warm creamy luxury light base */
+}
+
+/* Cyber ambient grid backlighting tweaks for light contrast */
+div.bg-gradient-to-b.from-orange-500\/10 {
+  background-image: linear-gradient(to bottom, rgba(234, 88, 12, 0.05), transparent) !important;
+}
+
+/* Adjust floating glowing blur vectors */
+div.blur-\[140px\] {
+  opacity: 0.15 !important;
+}
+
+/* 2. Glassmorphism Design: Translucent, frosted light surfaces */
+.glass-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 24px -2px rgba(15, 23, 42, 0.04), 
+              0 1px 3px -1px rgba(15, 23, 42, 0.02) !important;
+}
+
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 20px 48px -10px rgba(15, 23, 42, 0.1), 
+              0 4px 12px -2px rgba(15, 23, 42, 0.03) !important;
+  transform: translateY(-3px) !important;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(28px) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Adjust nested text colors automatically to achieve incredible contrast */
+.glass-card text,
+.glass-card h1, .glass-card h2, .glass-card h3, .glass-card h4, .glass-card h5, .glass-card h6,
+.glass-panel h1, .glass-panel h2, .glass-panel h3, .glass-panel h4, .glass-panel h5, .glass-panel h6,
+header h1, header h2, header h3, header h4, header h5, header h6,
+form h1, form h2, form h3, form h4,
+footer h1, footer h2, footer h3, footer h4,
+tr th, td h5, td span,
+input, textarea, select {
+  color: #0f172a !important; /* Deep Navy Slate */
+}
+
+/* Adjust description paragraphs and secondary captions */
+.glass-card p,
+.glass-panel p,
+footer p,
+form p {
+  color: #475569 !important; /* Slate-600 */
+}
+
+/* 3. Text & Typography Accessibility Fixes */
+.text-white,
+.text-slate-100,
+.text-slate-200,
+.text-slate-350,
+.text-slate-300 {
+  color: #1e293b !important; /* Slate-800 default */
+}
+
+/* Dark Slate override for secondary elements */
+.text-slate-400 {
+  color: #475569 !important; /* Muted Slate-600 */
+}
+
+.text-slate-500 {
+  color: #64748b !important; /* Gray Slate-500 */
+}
+
+/* Keep accent highlights highly readable under white environments */
+.text-amber-400 {
+  color: #ca8a04 !important; /* Dark amber-600 */
+}
+.text-green-400 {
+  color: #16a34a !important; /* Muted vibrant green-600 */
+}
+.text-emerald-400 {
+  color: #0d9488 !important; /* Teal-600 */
+}
+.text-orange-500,
+.text-orange-550 {
+  color: #ea580c !important; /* Orange-600 */
+}
+.text-red-500,
+.text-red-650 {
+  color: #dc2626 !important; /* Red-600 */
+}
+
+/* Nav Item Unselected styles */
+header button {
+  color: #475569 !important;
+}
+
+/* 4. Retain White typography for Solid Brand buttons & active badges */
+button.bg-gradient-to-br,
+button.bg-gradient-to-r,
+div.bg-gradient-to-br,
+div.bg-gradient-to-b.from-red-600,
+span.bg-gradient-to-r,
+.bg-gradient-to-br span,
+.bg-gradient-to-r span,
+.bg-gradient-to-br div,
+.bg-gradient-to-r div,
+.bg-gradient-to-br svg,
+.bg-gradient-to-r svg {
+  color: #ffffff !important;
+}
+
+/* 5. Inputs, Selections, Forms & Fields custom style sheets */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea,
+select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important; /* Slate-300 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #ea580c !important; /* Orange accent focus */
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8 !important; /* Slate-400 */
+}
+
+/* 6. Modals, Tables, Backdrops & Overlays customized spacing */
+.fixed.inset-0.bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.45) !important; /* Soft modal dimmer */
+  backdrop-filter: blur(12px) !important;
+}
+
+table {
+  background-color: #ffffff !important;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #f1f5f9 !important; /* Light table header */
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+
+thead th,
+thead th span {
+  color: #475569 !important;
+  font-weight: 700 !important;
+}
+
+tbody tr {
+  border-bottom: 1px solid #f1f5f9 !important;
+  background-color: #ffffff !important;
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #fafbfd !important;
+}
+
+/* Custom dark fields override */
+.bg-\[\#030307\],
+.bg-\[\#040407\],
+.bg-\[\#05050b\],
+.bg-\[\#080812\],
+.bg-\[\#0f111a\],
+.bg-black\/60,
+.bg-black\/40 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Ensure elements like the secondary navigation pills look clean */
+.border-white\/10,
+.border-white\/5 {
+  border-color: #e2e8f0 !important;
+}
+
+.bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.hover\:bg-white\/10:hover {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+/* 3D Scene Controls Panel */
+.bg-black\/60 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Progress bar rail under light layout */
+.bg-white\/10 {
+  background-color: #e2e8f0 !important;
+}
+
+/* Keyframes float slow animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes float-delay {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(15px) scale(0.95);
+  }
+}
+
+.animate-float-1 {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-delay 10s ease-in-out infinite;
+}
