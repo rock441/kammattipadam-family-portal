@@ -1,0 +1,6 @@
+{
+  "name": "Kammattipadam Grand RP Family Portal",
+  "description": "A premium, professional 3D-enhanced gaming portal and dashboard for the Kammattipadam Grand RP family, featuring dynamic faction rosters, interactive 3D galleries, and family status trackers.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
